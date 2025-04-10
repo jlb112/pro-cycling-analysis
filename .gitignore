@@ -1,3 +1,7 @@
 # Next.js
 .next/
 out/
+node_modules/
+
+# data
+services/analysis/data
