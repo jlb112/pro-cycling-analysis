@@ -5,6 +5,27 @@ import { CheckCircle, Zap, Shield, Globe } from "../components/icons"
 import Link from "next/link"
 
 export default function Home() {
+  const posts = [
+    {
+      id: 1,
+      title: "The Art of Climbing: Analyzing the Best Climbers in the Peloton",
+      excerpt: "Discover what makes the best climbers stand out in professional cycling.",
+      link: "/blog/the-art-of-climbing",
+    },
+    {
+      id: 2,
+      title: "Sprint Tactics: How Teams Set Up Their Fast Finishers",
+      excerpt: "A deep dive into the strategies behind successful sprint finishes.",
+      link: "/blog/sprint-tactics",
+    },
+    {
+      id: 3,
+      title: "Grand Tour Predictions: Who Will Dominate This Season?",
+      excerpt: "Our expert predictions for the upcoming Grand Tours.",
+      link: "/blog/grand-tour-predictions",
+    },
+  ];
+
   return (
     <Layout>
       <Head>
@@ -71,134 +92,37 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Features Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32 bg-gray-50 dark:bg-gray-900">
+     
+
+      {/* Blog Feed Section */}
+      <section className="w-full py-12 md:py-24">
         <div className="container px-4 md:px-6">
-          <div className="flex flex-col items-center justify-center space-y-4 text-center">
-            <div className="space-y-2">
-              <div className="inline-block rounded-lg bg-gray-100 px-3 py-1 text-sm dark:bg-gray-800">
-                Analysis Features
+          <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl mb-8">
+            Latest Posts
+          </h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {posts.map((post) => (
+              <div
+                key={post.id}
+                className="rounded-lg border border-gray-200 bg-white p-6 shadow-sm dark:border-gray-800 dark:bg-gray-950"
+              >
+                <h3 className="text-xl font-bold">{post.title}</h3>
+                <p className="text-gray-500 dark:text-gray-400">{post.excerpt}</p>
+                <Link
+                  href={post.link}
+                  className="mt-4 inline-block text-sm font-medium text-blue-600 hover:underline dark:text-blue-400"
+                >
+                  Read more →
+                </Link>
               </div>
-              <h2 className="text-3xl font-bold tracking-tighter md:text-4xl">Comprehensive cycling coverage</h2>
-              <p className="max-w-[900px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-                Our platform provides in-depth analysis of races, riders, and teams across the professional cycling
-                calendar.
-              </p>
-            </div>
-          </div>
-          <div className="mx-auto grid max-w-5xl items-center gap-6 py-12 lg:grid-cols-2 lg:gap-12">
-            <div className="grid gap-6">
-              <div className="flex items-start gap-4">
-                <CheckCircle className="h-8 w-8 text-green-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Race Breakdowns</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Detailed analysis of key moments, tactics, and decisive moves in every major race.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Zap className="h-8 w-8 text-amber-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Power Analysis</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Expert interpretation of power data, climbing performances, and sprint finishes.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Shield className="h-8 w-8 text-blue-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Team Tactics</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Insights into team strategies, domestique roles, and leadership decisions.
-                  </p>
-                </div>
-              </div>
-            </div>
-            <div className="grid gap-6">
-              <div className="flex items-start gap-4">
-                <Globe className="h-8 w-8 text-purple-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Global Coverage</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Analysis of all UCI WorldTour events, Grand Tours, Monuments, and major races.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <CheckCircle className="h-8 w-8 text-green-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Rider Profiles</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    In-depth profiles of top cyclists, rising stars, and legendary riders.
-                  </p>
-                </div>
-              </div>
-              <div className="flex items-start gap-4">
-                <Zap className="h-8 w-8 text-amber-500" />
-                <div className="space-y-1">
-                  <h3 className="text-xl font-bold">Data Visualization</h3>
-                  <p className="text-gray-500 dark:text-gray-400">
-                    Clear, insightful charts and graphics that bring cycling statistics to life.
-                  </p>
-                </div>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-          <div className="space-y-2">
-            <h2 className="text-3xl font-bold tracking-tighter md:text-4xl/tight">
-              Ready to dive deeper into pro cycling?
-            </h2>
-            <p className="max-w-[600px] text-gray-500 md:text-xl/relaxed lg:text-base/relaxed xl:text-xl/relaxed dark:text-gray-400">
-              Join thousands of cycling enthusiasts who rely on our expert analysis to understand the sport they love.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row lg:justify-end">
-            <Button className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
-              Get Started
-            </Button>
-            <Button
-              variant="outline"
-              className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-            >
-              Contact Sales
-            </Button>
-          </div>
-        </div>
-      </section>
+      
 
-      {/* CTA Section */}
-      <section className="w-full py-12 md:py-24 lg:py-32">
-        <div className="container grid items-center gap-6 px-4 md:px-6 lg:grid-cols-2 lg:gap-10">
-          <div className="space-y-2">
-            <h2 className="lg:leading-tighter text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl xl:text-[3.4rem] 2xl:text-[3.75rem]">
-              Don't miss our coverage of the next big race.
-            </h2>
-            <p className="mx-auto max-w-[700px] text-muted-foreground md:text-xl/relaxed">
-              From Grand Tours to one-day classics, our team of analysts provides the most comprehensive coverage of
-              professional cycling available anywhere.
-            </p>
-          </div>
-          <div className="flex flex-col gap-2 min-[400px]:flex-row lg:justify-end">
-            <Button className="inline-flex h-10 items-center justify-center rounded-md bg-gray-900 px-8 text-sm font-medium text-gray-50 shadow transition-colors hover:bg-gray-900/90 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:bg-gray-50 dark:text-gray-900 dark:hover:bg-gray-50/90 dark:focus-visible:ring-gray-300">
-              Get Started
-            </Button>
-            <Button
-              variant="outline"
-              className="inline-flex h-10 items-center justify-center rounded-md border border-gray-200 bg-white px-8 text-sm font-medium shadow-sm transition-colors hover:bg-gray-100 hover:text-gray-900 focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-gray-950 disabled:pointer-events-none disabled:opacity-50 dark:border-gray-800 dark:bg-gray-950 dark:hover:bg-gray-800 dark:hover:text-gray-50 dark:focus-visible:ring-gray-300"
-            >
-              Contact Sales
-            </Button>
-          </div>
-        </div>
-      </section>
+      
     </Layout>
   )
 }
