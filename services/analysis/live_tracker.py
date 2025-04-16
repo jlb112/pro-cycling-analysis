@@ -4,8 +4,11 @@ import json
 from datetime import datetime, timedelta
 import os
 
-URL = "https://www.ilgirodabruzzo.it/en/live-feed/tappa/1/"
-SAVE_DIR = "data/live_data/raw"
+tour_name = "girodabruzzo"
+stage_number = "2"
+
+URL = f"https://www.ilgirodabruzzo.it/en/live-feed/tappa/{stage_number}/"
+SAVE_DIR = f"data/live_data/raw/{tour_name}/stage-{stage_number}/"
 os.makedirs(SAVE_DIR, exist_ok=True)
 
 def fetch_and_save(is_final_run=False):
@@ -39,7 +42,7 @@ def fetch_and_save(is_final_run=False):
             snapshot["solo_titolo_entries"] = entries
 
         # Save to file
-        filename = os.path.join(SAVE_DIR, f"{timestamp}.json")
+        filename = os.path.join(SAVE_DIR, f"{timestamp}_final.json" if is_final_run else f"{timestamp}.json")
         with open(filename, "w", encoding="utf-8") as f:
             json.dump(snapshot, f, ensure_ascii=False, indent=2)
 
@@ -48,7 +51,7 @@ def fetch_and_save(is_final_run=False):
     except Exception as e:
         print(f"Error fetching data: {e}")
 
-def run_every_five_minutes(duration_hours=3):
+def run_every_x_minutes(duration_hours=3):
     start_time = datetime.utcnow()
     end_time = start_time + timedelta(hours=duration_hours)
     
@@ -56,16 +59,28 @@ def run_every_five_minutes(duration_hours=3):
     while True:
         now = datetime.utcnow()
         time_remaining = (end_time - now).total_seconds()
-        is_final = time_remaining <= 300  # Last 5-minute interval
 
-        fetch_and_save(is_final_run=is_final)
+        # Fetch data and check the condition
+        fetch_and_save(is_final_run=False)
+        latest_file = max(
+            [os.path.join(SAVE_DIR, f) for f in os.listdir(SAVE_DIR) if f.endswith(".json")],
+            key=os.path.getctime
+        )
+        with open(latest_file, "r", encoding="utf-8") as f:
+            latest_data = json.load(f)
+        
+        distanza_arrivo = latest_data.get("distanza_arrivo", None)
+        if distanza_arrivo == "-0 Km from arrival":
+            print("✅ Race finished. Exiting.")
+            break
 
         run_count += 1
-        if is_final:
+        if time_remaining <= 300:  # Last 5-minute interval
+            fetch_and_save(is_final_run=True)
             print("✅ Final run complete. Exiting.")
             break
         else:
             time.sleep(120)
 
 # Uncomment to start the script
-run_every_five_minutes()
+run_every_x_minutes()
