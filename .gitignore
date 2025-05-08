@@ -7,7 +7,6 @@ apps/web/.next/
 
 # data
 services/analysis/data
-
 services/analysis/outputs
 
 # venv

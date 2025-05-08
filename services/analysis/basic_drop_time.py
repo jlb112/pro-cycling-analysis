@@ -1,4 +1,6 @@
 import streamlit as st
+import plotly.graph_objects as go
+import numpy as np
 
 st.title("Finestre with the best in the world")
 
@@ -46,8 +48,7 @@ else:
 st.title("Why is my time so short?")
 
 
-import plotly.graph_objects as go
-import numpy as np
+
 
 # Range of W/kg to plot
 x = np.linspace(3.0, 6.2, 300)
