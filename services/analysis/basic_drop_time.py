@@ -15,7 +15,7 @@ rider_type_options = {
 
 # 1. Inputs
 ftp       = st.number_input("Your FTP (W)", min_value=1, value=250, max_value=600)
-weight    = st.number_input("Weight (kg)", min_value=1.0, value=75.0, max_value=200.0)
+weight    = st.number_input("Weight (kg)", min_value=30.0, value=75.0, max_value=200.0)
 draft_pct = st.slider("Drafting bonus (%)", 0, 40, 30) / 100
 label = st.selectbox("Rider type", list(rider_type_options.keys()))
 
