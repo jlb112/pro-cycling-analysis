@@ -10,9 +10,9 @@ st.markdown("""This year, the Giro will take on the iconic Colle delle Finestre 
           Using the tool below, you can estimate how long you could remain with Pablo Torres during his [incredible climb](%s) of Colle delle Finestre in the Tour de l'Avenir 2024.""" % url)
 
 rider_type_options = {
-    "Climber": 0.06,
-    "All-rounder": 0.07,
-    "Punchy": 0.09
+    "Climber": 1.14,
+    "All-rounder": 1.4,
+    "Punchy": 1.7
 }
 
 # 1. Inputs
