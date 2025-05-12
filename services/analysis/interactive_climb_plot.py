@@ -1,69 +1,107 @@
 import pandas as pd
-import plotly.graph_objects as go
+import matplotlib.pyplot as plt
+import matplotlib.font_manager as fm
 
-# Load the CSV file
-file_path = "services/analysis/data/gpx_climbs_parsed/colle-delle-finestre.csv"
-data = pd.read_csv(file_path)
+# 1. Load your parsed CSV
+df = pd.read_csv('services/analysis/data/gpx_climbs_parsed/colle-delle-finestre.csv')
 
-# Group the data into 1km (1000m) sections
-data['km_section'] = (data['cum_distance'] // 1000).astype(int)  # Create a column for 1km sections
+# Convert cum_distance (m) to km
+df['distance_km'] = df['cum_distance'] / 1000.0
 
-# Calculate the average elevation and gradient for each section
-section_data = data.groupby('km_section').agg(
-    avg_elevation=('elevation', 'mean'),
-    start_distance=('cum_distance', 'min'),
-    end_distance=('cum_distance', 'max'),
-    elevation_gain=('elevation', lambda x: x.iloc[-1] - x.iloc[0])
-).reset_index()
+# 2. Compute 1-km gradient segments
+df['km_bin'] = df['distance_km'].astype(int)
+segments = (
+    df
+    .groupby('km_bin')
+    .agg(
+        start_km=('distance_km', 'min'),
+        end_km=('distance_km', 'max'),
+        start_elev=('elevation', 'first'),
+        end_elev=('elevation', 'last')
+    )
+    .reset_index(drop=True)
+)
+segments['gradient'] = (
+    (segments['end_elev'] - segments['start_elev'])
+    / ((segments['end_km'] - segments['start_km']) * 1000)
+) * 100  # % gradient
 
-# Calculate the gradient for each section
-section_data['gradient'] = (section_data['elevation_gain'] / 
-                            (section_data['end_distance'] - section_data['start_distance'])) * 100
+# 3. Gradient → color
+gradient_colour_mappings = {
+    1:  '#fcd86eff',
+    2:  '#f9b242ff',
+    4:  '#f68e34ff',
+    6:  '#f9b242ff',
+    8:  '#da231cff',
+    10: '#b60e27ff',
+    12: '#920920ff',
+    15: '#4c0318ff',
+    20: '#22010bff'
+}
+thresholds = sorted(gradient_colour_mappings.keys())
+def gradient_color(g):
+    for thr in thresholds:
+        if g <= thr:
+            return gradient_colour_mappings[thr]
+    return gradient_colour_mappings[thresholds[-1]]
+segments['color'] = segments['gradient'].apply(gradient_color)
 
-# Create the base figure
-fig = go.Figure()
+# 4. Use Inter font (if installed)
+try:
+    inter_font = fm.FontProperties(fname=fm.findfont("Ubuntu Mono"))
+except:
+    inter_font = None  # fallback to default
 
-# Add filled areas for each section
-for i, row in section_data.iterrows():
-    gradient = row['gradient']
-    alpha = max(0, min(gradient / 10, 1))  # Ensure alpha is between 0 and 1
-    color_intensity = f"rgba(0, 0, 255, {alpha:.2f})"  # Darker blue for higher gradients
-    fig.add_trace(go.Scatter(
-        x=[row['start_distance'], row['end_distance'], row['end_distance'], row['start_distance']],
-        y=[0, 0, row['avg_elevation'], row['avg_elevation']],
-        fill='toself',
-        fillcolor=color_intensity,
-        line=dict(width=0),
-        hoverinfo='skip',
-        showlegend=False
-    ))
+# 5. Plot
+fig, ax = plt.subplots(figsize=(12, 4))
 
-# Add the elevation profile line
-fig.add_trace(go.Scatter(
-    x=section_data['end_distance'],
-    y=section_data['avg_elevation'],
-    mode='lines+markers',
-    line=dict(color='black', width=2),
-    name='Elevation Profile'
-))
-
-# Add gradient annotations
-for i, row in section_data.iterrows():
-    fig.add_annotation(
-        x=row['end_distance'],
-        y=row['avg_elevation'],
-        text=f"{row['gradient']:.1f}%",
-        showarrow=False,
-        font=dict(size=10, color="blue")
+for _, row in segments.iterrows():
+    ax.fill_between(
+        [row['start_km'], row['end_km']],
+        [row['start_elev'], row['end_elev']],
+        color=row['color']
+    )
+    mid_x = (row['start_km'] + row['end_km']) / 2
+    top_elev = max(row['start_elev'], row['end_elev'])
+    y_offset = (df['elevation'].max() - df['elevation'].min()) * 0.02
+    ax.text(
+        mid_x,
+        top_elev - y_offset,
+        f"{row['gradient']:.1f}%",
+        ha='center', va='bottom',
+        fontsize=9,
+        fontproperties=inter_font,
+        weight='bold',
+        color='black'
     )
 
-# Update layout
-fig.update_layout(
-    title='Smoothed Elevation Profile with Gradient Shading: Colle delle Finestre',
-    xaxis_title='Cumulative Distance (m)',
-    yaxis_title='Elevation (m)',
-    template='plotly_white'
-)
+# 6. Vertical lines at km splits
+max_km = int(df['distance_km'].max())
+for km in range(1, max_km + 1):
+    closest_point = df.iloc[(df['distance_km'] - km).abs().argmin()]
+    ax.vlines(
+        x=km,
+        ymin=0,
+        ymax=closest_point['elevation'],
+        color='white',
+        linewidth=0.8,
+        linestyle='-'
+    )
 
-# Show the chart
-fig.show()
+# 7. Styling: no grid, clean spines, custom ticks
+ax.set_xlabel('Distance (km)', fontproperties=inter_font, fontsize=11)
+ax.set_ylabel('Elevation (m)', fontproperties=inter_font, fontsize=11)
+ax.set_title('Climb Profile',
+             fontproperties=inter_font, fontsize=13, weight='bold')
+
+ax.set_xticks([i for i in range(0, max_km + 1)])
+ax.set_xticklabels([f"{i}.0" for i in range(0, max_km + 1)],
+                   fontproperties=inter_font, fontsize=10)
+ax.tick_params(axis='y', labelsize=9)
+
+ax.grid(False)
+ax.spines['top'].set_visible(False)
+ax.spines['right'].set_visible(False)
+
+plt.tight_layout()
+plt.show()
