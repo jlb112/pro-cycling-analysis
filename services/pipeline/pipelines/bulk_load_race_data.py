@@ -13,7 +13,9 @@ def parse_filename(filename):
         raise ValueError(f"Filename {filename} does not match expected pattern")
     year = int(m.group(1))
     race_name = m.group(2).replace("_", " ")
+    print(race_name)
     stage_num = int(m.group(3)) if m.group(3) else None
+    print(stage_num)
     if stage_num:
         type_ = "stage"
         full_name = f"{race_name} {year} Stage {stage_num}"
@@ -27,9 +29,9 @@ cursor = conn.cursor()
 
 error_files = []
 
-data_dir = "../analysis/data"
+data_dir = "../analysis/data/race_results"
 for fname in os.listdir(data_dir):
-    if fname.endswith(".json"):
+    if fname.endswith("2018_Abu_Dhabi_Tour_stage_1.json"):
         file_path = os.path.join(data_dir, fname)
         with open(file_path, "r", encoding="utf-8") as f:
             race_data = json.load(f)
