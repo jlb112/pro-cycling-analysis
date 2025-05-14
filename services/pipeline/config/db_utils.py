@@ -17,7 +17,7 @@ def get_connection(env="dev"):
 
     # Load the correct .env file from the same folder as this script
     env_filename = env_file_map[env]
-    dotenv_path = os.path.join(os.path.dirname(__file__), ".env", env_filename)
+    dotenv_path = os.path.join(os.path.dirname(__file__), "../.env", env_filename)
     
     load_dotenv(dotenv_path)
 

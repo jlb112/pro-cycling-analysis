@@ -2,7 +2,7 @@ import os
 import csv
 import sys
 from datetime import datetime
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '../config')))
 from db_utils import get_connection
 
 conn = get_connection("dev")
@@ -12,7 +12,7 @@ error_files = []
 
 data_dir = "../analysis/data/gpx_parsed"
 for fname in os.listdir(data_dir):
-    if fname.endswith("2017 Abu Dhabi Tour Stage 3.csv"):
+    if fname.endswith(".csv"):
         file_path = os.path.join(data_dir, fname)
         try:
             with open(file_path, "r", encoding="utf-8") as f:
