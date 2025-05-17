@@ -3,189 +3,254 @@ import os
 import sys
 import requests
 import re
+import glob
+import logging
+from datetime import datetime
 from requests.adapters import HTTPAdapter
 from urllib3.util.retry import Retry
 from bs4 import BeautifulSoup
+import shutil
+
+# Set up logger for this module
+logger = logging.getLogger(__name__)
+
+# -------------------------------
+# SESSION SETUP FOR TRACK ID REQUESTS
+# -------------------------------
+
+def build_session():
+    """
+    Build a requests.Session with custom headers and retry logic.
+    This helps avoid being blocked and handles transient network errors.
+    """
+    s = requests.Session()
+    s.headers.update({
+        "User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64)...",
+        "Accept-Language": "en-US,en;q=0.9",
+        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
+    })
+    # Configure retry strategy for robustness
+    retries = Retry(total=5, backoff_factor=1, status_forcelist=[500,502,503,504], allowed_methods=["GET","HEAD"])
+    adapter = HTTPAdapter(max_retries=retries)
+    s.mount("https://", adapter)
+    s.mount("http://", adapter)
+    return s
+
+# -------------------------------
+# GET TRACK IDs FOR TODAY'S UWT MEN'S EVENTS
+# -------------------------------
+
+def get_track_ids():
+    """
+    Scrape the LFR calendar for today's date and extract track IDs for
+    UCI WorldTour Men's Elite (2.UWT - ME) races.
+    Returns a list of track IDs as strings.
+    """
+    url = "https://www.la-flamme-rouge.eu/index.php"
+    logger.info("Fetching calendar page: %s", url)
+    sess = build_session()
+    try:
+        r = sess.get(url, timeout=10)
+        r.raise_for_status()
+    except Exception as e:
+        logger.exception("Failed to fetch calendar")
+        return []
+
+    soup = BeautifulSoup(r.text, "html.parser")
+    # Find the table cell for today's date
+    today = soup.select_one("td.day.day--today")
+    if not today:
+        logger.warning("No <td class='day day--today'> found")
+        return []
+
+    ids = {}
+    # Loop through all links in today's cell
+    for a in today.find_all("a", href=True):
+        meta = a.select_one("div.race__meta")
+        # Only consider links with the correct race type (.UWT - ME)
+        if meta and ".UWT - ME -" in meta.get_text(strip=True):
+            m = re.search(r"/maps/viewtrack/(\d+)", a["href"])
+            n = a.select_one("div.race__name")
+            if n and m:
+                year = str(datetime.now().year)
+                # Join all text parts separated by <br> with a space
+                name = f"{year} " + " ".join(n.stripped_strings)
+                track_id = int(m.group(1))
+                ids[name] = track_id
+                logger.info("Discovered track: %s -> %s", name, track_id)
+                
+
+    return ids
+
+# -------------------------------
+# SELENIUM GPX FILE DOWNLOADER
+# -------------------------------
 
 from dotenv import load_dotenv
 from selenium import webdriver
-from selenium.webdriver.common.by import By
-from selenium.webdriver.common.keys import Keys
-import undetected_chromedriver as uc
 from selenium.webdriver.chrome.service import Service
 from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
-from selenium.webdriver.chrome.options import Options
+from selenium.webdriver.common.by import By
 
-# FOR TRACKS IN CALENDAR on today's date, IF 2.UWT - ME - take id
+# -------------------------------
+# HELPER: WAIT FOR FILE TO DOWNLOAD
+# -------------------------------
 
-def get_track_ids():
-    url = "https://www.la-flamme-rouge.eu/index.php"
-    s = requests.Session()
-    s.headers.update({
-        "User-Agent": (
-            "Mozilla/5.0 (Windows NT 10.0; Win64; x64) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/114.0.0.0 Safari/537.36"
-        ),
-        "Accept-Language": "en-US,en;q=0.9",
-        "Accept": "text/html,application/xhtml+xml,application/xml;q=0.9,*/*;q=0.8",
-    })
+def wait_for_new_gpx(directory, timeout=30, poll_interval=0.5):
+    """
+    Wait up to `timeout` seconds for *new* .gpx file(s) to appear
+    in `directory`, ignoring those already there when we started.
+    Returns a list of the new filepaths, or raises a TimeoutError.
+    """
+    # 1) snapshot the files that already exist
+    before = set(glob.glob(os.path.join(directory, "*.gpx")))
 
-    retries = Retry(
-        total=5,
-        backoff_factor=1,
-        status_forcelist=[500, 502, 503, 504],
-        allowed_methods=["GET", "HEAD"]
-    )
-    adapter = HTTPAdapter(max_retries=retries)
-    s.mount("https://", adapter)
-    s.mount("http://",  adapter)
-
-    try:
-        resp = s.get(url, timeout=10)
-        resp.raise_for_status()
-    except requests.exceptions.RequestException as e:
-        print(f"Failed to fetch {url}: {e!r}")
-        return []
-
-    soup = BeautifulSoup(resp.text, "html.parser")
-    today_td = soup.select_one("td.day.day--today")
-    if not today_td:
-        print("Could not find a <td class='day day--today'> element.")
-        return []
-
-    track_ids = []
-    for a in today_td.find_all("a", href=True):
-        meta_div = a.select_one("div.race__meta")
-        if not meta_div:
+    end_time = time.time() + timeout
+    while time.time() < end_time:
+        # a) wait out any .crdownload temp files first
+        if glob.glob(os.path.join(directory, "*.crdownload")):
+            time.sleep(poll_interval)
             continue
-        meta_text = meta_div.get_text(strip=True)
-        if "- 2.UWT - ME -" in meta_text:
-            href = a["href"]
-            m = re.search(r'/maps/viewtrack/(\d+)', href)
-            if m:
-                track_id = m.group(1)
-                track_ids.append(track_id)
-                
 
-    return track_ids
+        # b) find all .gpx now and subtract the old ones
+        now = set(glob.glob(os.path.join(directory, "*.gpx")))
+        new_file = now - before
+        if new_file:
+            return next(iter(new_file))  # one file only because download is inside track for loop - so one new at a time
 
+        time.sleep(poll_interval)
 
+    raise TimeoutError(f"No new .gpx downloaded in {directory} after {timeout}s")
 
-def get_gpx_file(track_ids = ['587221']):
-    # Import list of track ids to scrape
+# -------------------------------
+# MAIN GPX DOWNLOAD FUNCTION
+# -------------------------------
 
-    load_dotenv(os.path.join(os.path.dirname(__file__), "../.env", "dev.env"))
-
+def get_gpx_files(track_ids = {"Giro d'Italia Stage 7": 587221}):
+    """
+    Use Selenium to log in to LFR and download GPX files for the given track IDs.
+    Downloads are saved to data/raw (relative to script).
+    Accepts a dict: {name: track_id, ...}
+    """
+    # assume dotenv already loaded by runner
     username = os.getenv("LFR_USERNAME")
     password = os.getenv("LFR_PASSWORD")
 
-    options = webdriver.ChromeOptions()
+    # Set download directory (relative path for portability)
+    download_dir = os.path.abspath("data/raw")
+    os.makedirs(download_dir, exist_ok=True)
 
-    options.add_argument('--headless')  # run without GUI
-    options.add_argument('--window-size=1920,1080')  # ensures full page loads correctly
-    # Set Chrome options to disable password manager popup
+    # Set Chrome options for headless download and custom download directory
+    chrome_opts = webdriver.ChromeOptions()
+    chrome_opts.add_argument("--headless")
+    chrome_opts.add_argument("--window-size=1920,1080")
     prefs = {
         "credentials_enable_service": False,
-        "profile.password_manager_enabled": False
+        "profile.password_manager_enabled": False,
+        "download.default_directory": download_dir,
+        "download.prompt_for_download": False,
+        "download.directory_upgrade": True,
+        "safebrowsing.enabled": True,
+        "profile.default_content_settings.popups": 0,
+        "profile.default_content_setting_values.automatic_downloads": 1
     }
-    options.add_experimental_option("prefs", prefs)
-    options.add_argument("--start-maximized")
+    chrome_opts.add_experimental_option("prefs", prefs)
 
-    driver = webdriver.Chrome(options=options)
-
-    # Start the driver with the options
-    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()), options=options)
-
-    # STEP 1: Open homepage
-    driver.get("https://www.la-flamme-rouge.eu/ucp.php?mode=login&redirect=index.php")
-
-    # Try to dismiss the "Got it!" cookie banner if it appears
-    try:
-        wait = WebDriverWait(driver, 5)
-        got_it_button = wait.until(EC.element_to_be_clickable(
-            (By.CSS_SELECTOR, ".cc-btn.cc-dismiss")
-        ))
-        got_it_button.click()
-        print("Cookie banner dismissed.")
-    except:
-        print("No cookie banner to dismiss.")
-
-    time.sleep(2)
-
-    # Locate the cookie consent accept button inside the fc-consent-root div
-    try:
-        accept_button = driver.find_element(By.XPATH, "//div[contains(@class, 'fc-consent-root')]//button[@class='fc-button fc-cta-consent fc-primary-button']")
-        accept_button.click()
-    except Exception as e:
-        print("No cookie consent pop-up or button not found:", e)
-
-
-    # STEP 3: Wait for the login pop-up to appear
-    time.sleep(5)
-
-    # Fill out the login form with user and password
-    driver.find_element(By.NAME, "username").send_keys(username)
-    driver.find_element(By.NAME, "password").send_keys(password)
-
-    # STEP 5: Submit the login form (press the login button inside the pop-up)
-    login_button = driver.find_element(By.NAME, "login")
-    login_button.click()
-
-    # STEP 6: Wait for login to complete
-    time.sleep(5)
+    # Start Chrome WebDriver
+    driver = webdriver.Chrome(service=Service(ChromeDriverManager().install()),
+                              options=chrome_opts)
+    wait = WebDriverWait(driver, 10)
 
     try:
-        accept_button = driver.find_element(By.XPATH, "//div[contains(@class, 'fc-consent-root')]//button[@class='fc-button fc-cta-consent fc-primary-button']")
-        accept_button.click()
-    except Exception as e:
-        print("No cookie consent pop-up or button not found:", e)
+        logger.info("Logging in to LFR")
+        driver.get("https://www.la-flamme-rouge.eu/ucp.php?mode=login")
+        # Dismiss cookie banners if present
+        for selector in [".cc-dismiss", ".fc-cta-consent"]:
+            try:
+                btn = wait.until(EC.element_to_be_clickable((By.CSS_SELECTOR, selector)))
+                btn.click()
+                logger.debug("Clicked %s banner", selector)
+            except Exception:
+                logger.debug("No %s banner found", selector)
 
+        # Fill login form
+        driver.find_element(By.NAME, "username").send_keys(username)
+        driver.find_element(By.NAME, "password").send_keys(password)
+        driver.find_element(By.NAME, "login").click()
 
-    time.sleep(5)
-    # STEP 7: Visit the track page
+        # Wait for login redirect to index.php
+        wait.until(EC.url_contains("index.php"))
+        logger.info("Login successful, dismissing post login banners")
 
-    # FOR Track ID IN TRACK IDS
-    for track_id in track_ids:
-    
-        driver.get(f"https://www.la-flamme-rouge.eu/maps/viewtrack/{track_id}")
-
-
+        # Dismiss post-login cookie consent if present
         try:
-            accept_button = driver.find_element(By.XPATH, "//div[contains(@class, 'fc-consent-root')]//button[@class='fc-button fc-cta-consent fc-primary-button']")
+            accept_button = driver.find_element(
+                By.XPATH,
+                "//div[contains(@class, 'fc-consent-root')]"
+                "//button[@class='fc-button fc-cta-consent fc-primary-button']"
+            )
             accept_button.click()
+            logger.info("Post-login cookie consent dismissed")
         except Exception as e:
-            print("No cookie consent pop-up or button not found:", e)
-        # STEP 8: Wait for the page to load and confirm login
-        time.sleep(5)
+            logger.debug("No post-login consent pop-up found: %s", e)
 
-        # STEP 9: Extract or scrape track data
-        # For example, extracting track data from the page
-        #track_data = driver.execute_script("return window._trackData")
-        #print(track_data)
+        # Download GPX for each track ID in the dictionary
+        for name, tid in track_ids.items():
+            logger.info("Fetching GPX for track '%s' (ID: %s)", name, tid)
+            driver.get(f"https://www.la-flamme-rouge.eu/maps/viewtrack/{tid}")
+            logger.info(f"url = https://www.la-flamme-rouge.eu/maps/viewtrack/{tid}")
+            
+            # Find all iframes and try switching to each until the pop up button is found
+            iframes = driver.find_elements(By.TAG_NAME, "iframe")
+            for iframe in iframes:
+                driver.switch_to.frame(iframe)
+                try:
+                    accept_button = driver.find_element(By.XPATH, "//div[@id='dismiss-button' and contains(@class, 'btn skip')]")
+                    accept_button.click()
+                    logger.info("Additional ad pop up dismissed")
+                    driver.switch_to.default_content()
+                    break
+                except Exception:
+                    logger.info("No ad pop up found")
+                    driver.switch_to.default_content()
+                    continue
 
-        # You can also download the GPX if there's a download link
-        gpx_button = driver.find_element(By.LINK_TEXT, "Export GPX")
-        gpx_button.click()
-        print(f"Downloaded track: {track_id}")
 
-    time.sleep(20)
+            wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Export GPX"))).click()
+            logger.info("Clicked GPX export for %s", tid)
+            try:
+                filepath = wait_for_new_gpx(download_dir, timeout=60)
+                logger.info("Download complete: %s", filepath)
+                # Sanitize name for filesystem (remove/replace problematic characters)
+                #safe_name = "".join(c if c.isalnum() or c in " ._-" else "_" for c in name)
+                new_path = os.path.join(download_dir, f"{name}.gpx")
+                # If file with this name already exists, add a number suffix
+                base, ext = os.path.splitext(new_path)
+                counter = 1
+                while os.path.exists(new_path):
+                    new_path = f"{base}_{counter}{ext}"
+                    counter += 1
+                logger.info("Renaming to %s", new_path)
+                shutil.move(filepath, new_path)
+                logger.info("Renamed GPX to: %s", new_path)
+            except TimeoutError as e:
+                logger.error("Download did not complete for %s (%s): %s", name, tid, e)
 
-    # Close the browser when done
-    driver.quit()
+    finally:
+        driver.quit()
+        logger.info("WebDriver closed")
 
-    print("I ran get gpx data")
-
-
+# -------------------------------
 # FOR STANDALONE FUNCTION TESTING
+# -------------------------------
 
 if __name__ == "__main__":
-    # e.g. python myscript.py foo
+    # e.g. python myscript.py get_track_ids
     if sys.argv[1].lower() == "get_track_ids":
         get_track_ids()
-    elif sys.argv[1].lower() == "get_gpx_file":
-        get_gpx_file()
+    elif sys.argv[1].lower() == "get_gpx_files":
+        get_gpx_files()
     else:
         print("Usage: python myscript.py [get_track_ids|get_gpx_file]")
