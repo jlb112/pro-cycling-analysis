@@ -78,7 +78,8 @@ def get_track_ids():
                 track_id = int(m.group(1))
                 ids[name] = track_id
                 logger.info("Discovered track: %s -> %s", name, track_id)
-                
+            else: 
+                logger.info("No .UWT tracks found today")    
 
     return ids
 
@@ -93,6 +94,7 @@ from webdriver_manager.chrome import ChromeDriverManager
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
+from selenium.common.exceptions import TimeoutException, ElementClickInterceptedException
 
 # -------------------------------
 # HELPER: WAIT FOR FILE TO DOWNLOAD
@@ -217,9 +219,24 @@ def get_gpx_files(track_ids = {"Giro d'Italia Stage 7": 587221}):
                     driver.switch_to.default_content()
                     continue
 
+            try:
+                # Try to wait for the Export GPX button to be clickable
+                export_btn = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Export GPX")))
+                export_btn.click()
+                logger.info("Clicked GPX export for %s", tid)
+            except (TimeoutException, ElementClickInterceptedException) as e:
+                logger.info("Export GPX not clickable, attempting to dismiss overlay by clicking body: %s", e)
+                try:
+                    # Click the body to dismiss any overlay/ad
+                    driver.find_element(By.TAG_NAME, "body").click()
+                    # Wait again for the Export GPX button to be clickable
+                    export_btn = wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Export GPX")))
+                    export_btn.click()
+                    logger.info("Clicked GPX export for %s after dismissing overlay", tid)
+                except Exception as e2:
+                    logger.error("Failed to click Export GPX after dismissing overlay: %s", e2)
+                    continue  # Skip to next track if still not working
 
-            wait.until(EC.element_to_be_clickable((By.LINK_TEXT, "Export GPX"))).click()
-            logger.info("Clicked GPX export for %s", tid)
             try:
                 filepath = wait_for_new_gpx(download_dir, timeout=60)
                 logger.info("Download complete: %s", filepath)

@@ -272,3 +272,331 @@ Stacktrace:
 2025-05-17 13:49:26,259 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
 2025-05-17 13:49:26,263 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
 2025-05-17 13:49:28,491 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-17 16:44:42,116 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-17 16:44:43,819 INFO     scrapers.LFR_gpx_scraper: Discovered track: 2025 Giro d'Italia Stage 8 -> 587244
+2025-05-17 16:44:43,819 INFO     WDM: ====== WebDriver manager ======
+2025-05-17 16:44:46,158 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 16:44:46,746 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 16:44:48,095 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-17 16:44:49,800 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-17 16:45:10,701 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-17 16:45:11,011 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-17 16:45:11,011 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-17 16:45:19,914 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-17 16:45:20,549 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:20,649 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:20,733 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:20,843 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:20,989 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,079 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,176 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,251 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,332 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,445 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,513 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,600 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,703 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:21,926 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:22,352 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:22,467 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 16:45:23,078 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587244
+2025-05-17 16:45:27,104 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-stage-8.gpx
+2025-05-17 16:45:27,104 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-17 16:45:27,106 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-17 16:45:29,689 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-17 16:45:29,691 INFO     pipelines.gpx_parser: Starting GPX parsing in directory: data/raw
+2025-05-17 16:45:29,691 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 8.gpx...
+2025-05-17 16:45:30,038 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 8.csv
+2025-05-17 16:45:30,038 INFO     pipelines.gpx_parser: Processing marsia-2025.gpx...
+2025-05-17 16:45:30,349 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\marsia-2025.csv
+2025-05-17 16:45:30,349 INFO     pipelines.gpx_parser: All GPX files in directory have been processed.
+2025-05-17 16:59:25,498 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-17 16:59:27,012 INFO     scrapers.LFR_gpx_scraper: Discovered track: 2025 Giro d'Italia Stage 8 -> 587244
+2025-05-17 16:59:27,024 INFO     WDM: ====== WebDriver manager ======
+2025-05-17 16:59:30,031 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 16:59:30,346 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 16:59:31,154 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-17 16:59:32,858 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-17 16:59:54,713 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-17 16:59:55,050 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-17 16:59:55,050 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-17 17:03:47,258 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-17 17:03:49,188 INFO     scrapers.LFR_gpx_scraper: Discovered track: 2025 Giro d'Italia Stage 8 -> 587244
+2025-05-17 17:03:49,188 INFO     WDM: ====== WebDriver manager ======
+2025-05-17 17:03:51,375 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 17:03:51,712 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 17:03:51,859 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-17 17:03:53,412 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-17 17:04:14,114 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-17 17:04:14,421 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-17 17:04:14,421 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-17 17:04:25,001 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-17 17:04:25,680 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:25,879 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:26,033 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:26,632 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:26,792 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:26,891 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:26,996 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,128 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,266 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,396 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,520 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,643 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,793 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:27,940 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:28,022 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:28,103 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:28,179 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:28,244 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:28,344 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:04:32,197 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-17 17:05:03,228 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-17 17:05:06,475 INFO     scrapers.LFR_gpx_scraper: Discovered track: 2025 Giro d'Italia Stage 8 -> 587244
+2025-05-17 17:05:06,486 INFO     WDM: ====== WebDriver manager ======
+2025-05-17 17:05:08,968 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 17:05:09,407 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-17 17:05:09,712 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-17 17:05:11,133 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-17 17:05:32,822 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-17 17:05:33,167 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-17 17:05:33,167 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-17 17:05:43,957 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-17 17:05:44,343 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:44,443 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:44,541 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:44,858 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:45,092 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:45,457 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:45,622 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:45,880 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,037 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,178 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,271 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,358 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,443 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,540 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,619 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,711 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,812 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:46,895 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-17 17:05:47,246 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587244
+2025-05-17 17:05:50,259 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-stage-8.gpx
+2025-05-17 17:05:50,261 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8_1.gpx
+2025-05-17 17:05:50,261 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8_1.gpx
+2025-05-17 17:05:52,621 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-17 17:05:52,621 INFO     pipelines.gpx_parser: Starting GPX parsing in directory: data/raw
+2025-05-17 17:05:52,623 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 8.gpx...
+2025-05-17 17:05:53,039 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 8.csv
+2025-05-17 17:05:53,039 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 8_1.gpx...
+2025-05-17 17:05:53,385 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 8_1.csv
+2025-05-17 17:05:53,385 INFO     pipelines.gpx_parser: Processing giro-2025-stage-8.gpx...
+2025-05-18 13:42:00,050 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-18 13:42:01,682 INFO     scrapers.LFR_gpx_scraper: Discovered track: 2025 Giro d'Italia Stage 9 -> 587301
+2025-05-18 13:42:01,683 INFO     WDM: ====== WebDriver manager ======
+2025-05-18 13:42:04,577 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 13:42:04,710 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 13:42:04,785 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 13:42:05,009 INFO     WDM: WebDriver version 136.0.7103.94 selected
+2025-05-18 13:42:05,009 INFO     WDM: Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.94/win32/chromedriver-win32.zip
+2025-05-18 13:42:05,018 INFO     WDM: About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.94/win32/chromedriver-win32.zip
+2025-05-18 13:42:05,161 INFO     WDM: Driver downloading response is 200
+2025-05-18 13:42:09,216 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 13:42:09,571 INFO     WDM: Driver has been saved in cache [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94]
+2025-05-18 13:42:11,595 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-18 13:42:40,982 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-18 13:42:41,347 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-18 13:42:41,347 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 9' (ID: 587301)
+2025-05-18 13:43:01,210 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587301
+2025-05-18 13:43:01,698 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:01,880 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,042 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,140 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,302 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,434 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,612 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,783 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:02,963 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:03,077 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:03,258 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,028 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,184 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,329 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,526 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,743 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:04,863 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 13:43:05,417 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587301
+2025-05-18 13:43:10,444 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-rumored-stage-9.gpx
+2025-05-18 13:43:10,444 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 9.gpx
+2025-05-18 13:43:10,448 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 9.gpx
+2025-05-18 13:43:13,040 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-18 13:43:13,042 INFO     pipelines.gpx_parser: Starting GPX parsing in directory: data/raw
+2025-05-18 13:43:13,042 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 9.gpx...
+2025-05-18 13:43:13,693 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 9.csv
+2025-05-18 13:43:13,695 INFO     pipelines.gpx_parser: Processing marsia-2025.gpx...
+2025-05-18 13:43:14,139 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\marsia-2025.csv
+2025-05-18 13:43:14,139 INFO     pipelines.gpx_parser: All GPX files in directory have been processed.
+2025-05-18 13:51:34,105 INFO     pipelines.gpx_parser: Starting GPX parsing in directory: data/raw
+2025-05-18 13:51:34,105 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 9.gpx...
+2025-05-18 13:51:34,440 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 9.csv
+2025-05-18 13:51:34,440 INFO     pipelines.gpx_parser: Processing marsia-2025.gpx...
+2025-05-18 13:51:34,765 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\marsia-2025.csv
+2025-05-18 13:51:34,765 INFO     pipelines.gpx_parser: All GPX files in directory have been processed.
+2025-05-18 14:12:34,756 INFO     WDM: ====== WebDriver manager ======
+2025-05-18 14:12:39,039 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:12:40,043 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:12:42,165 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-18 14:12:44,808 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-18 14:13:36,083 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-18 14:13:36,630 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-18 14:13:36,630 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-18 14:14:02,718 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-18 14:14:03,336 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:03,542 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:03,691 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:03,948 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,068 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,205 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,380 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,562 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,719 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:04,847 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,054 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,170 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,294 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,460 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,683 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:05,825 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:06,006 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:06,157 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:14:06,875 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587244
+2025-05-18 14:14:09,402 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-stage-8.gpx
+2025-05-18 14:14:09,402 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:14:09,404 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:14:12,008 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-18 14:15:15,964 INFO     WDM: ====== WebDriver manager ======
+2025-05-18 14:15:18,683 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:15:19,145 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:15:19,658 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-18 14:15:21,687 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-18 14:15:47,295 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-18 14:15:47,997 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-18 14:15:47,997 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-18 14:16:05,722 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-18 14:16:06,021 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:06,361 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:06,778 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:07,080 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:07,265 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:07,458 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:07,660 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:07,873 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,011 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,174 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,314 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,453 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,575 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,691 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:08,942 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:16:09,612 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587244
+2025-05-18 14:16:11,622 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-stage-8.gpx
+2025-05-18 14:16:11,622 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:16:11,628 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:16:16,022 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-18 14:16:27,970 INFO     WDM: ====== WebDriver manager ======
+2025-05-18 14:16:32,696 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:16:33,239 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-18 14:16:34,797 INFO     WDM: Driver [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94\chromedriver-win32/chromedriver.exe] found in cache
+2025-05-18 14:16:36,500 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-18 14:17:12,045 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-18 14:17:12,594 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-18 14:17:12,594 INFO     scrapers.LFR_gpx_scraper: Fetching GPX for track '2025 Giro d'Italia Stage 8' (ID: 587244)
+2025-05-18 14:17:26,674 INFO     scrapers.LFR_gpx_scraper: url = https://www.la-flamme-rouge.eu/maps/viewtrack/587244
+2025-05-18 14:17:26,838 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:26,969 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,199 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,377 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,662 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,772 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,876 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:27,974 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,131 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,278 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,410 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,517 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,639 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,755 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:28,854 INFO     scrapers.LFR_gpx_scraper: No ad pop up found
+2025-05-18 14:17:29,236 INFO     scrapers.LFR_gpx_scraper: Clicked GPX export for 587244
+2025-05-18 14:17:34,255 INFO     scrapers.LFR_gpx_scraper: Download complete: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\giro-2025-stage-8.gpx
+2025-05-18 14:17:34,257 INFO     scrapers.LFR_gpx_scraper: Renaming to C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:17:34,257 INFO     scrapers.LFR_gpx_scraper: Renamed GPX to: C:\Users\JBrea\pro-cycling-analysis\services\pipeline\data\raw\2025 Giro d'Italia Stage 8.gpx
+2025-05-18 14:17:38,566 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-18 14:17:50,532 INFO     pipelines.gpx_parser: Starting GPX parsing in directory: data/raw
+2025-05-18 14:17:50,536 INFO     pipelines.gpx_parser: Processing 2025 Giro d'Italia Stage 8.gpx...
+2025-05-18 14:17:50,909 INFO     pipelines.gpx_parser: Saved parsed data to data/gpx_parsed\2025 Giro d'Italia Stage 8.csv
+2025-05-18 14:17:50,909 INFO     pipelines.gpx_parser: Skipping 2025 Giro d'Italia Stage 9.gpx, already processed.
+2025-05-18 14:17:50,909 INFO     pipelines.gpx_parser: Skipping marsia-2025.gpx, already processed.
+2025-05-18 14:17:50,909 INFO     pipelines.gpx_parser: All GPX files in directory have been processed.
+2025-05-19 10:29:11,387 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-19 10:29:50,644 ERROR    scrapers.LFR_gpx_scraper: Failed to fetch calendar
+urllib3.exceptions.ResponseError: too many 503 error responses
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\requests\adapters.py", line 667, in send
+    resp = conn.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\urllib3\connectionpool.py", line 942, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\urllib3\connectionpool.py", line 942, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\urllib3\connectionpool.py", line 942, in urlopen
+    return self.urlopen(
+           ^^^^^^^^^^^^^
+  [Previous line repeated 2 more times]
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\urllib3\connectionpool.py", line 932, in urlopen
+    retries = retries.increment(method, url, response=response, _pool=self)
+              ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\urllib3\util\retry.py", line 519, in increment
+    raise MaxRetryError(_pool, url, reason) from reason  # type: ignore[arg-type]
+    ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+urllib3.exceptions.MaxRetryError: HTTPSConnectionPool(host='www.la-flamme-rouge.eu', port=443): Max retries exceeded with url: /index.php (Caused by ResponseError('too many 503 error responses'))
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "C:\Users\JBrea\pro-cycling-analysis\services\pipeline\scrapers\LFR_gpx_scraper.py", line 53, in get_track_ids
+    r = sess.get(url, timeout=10)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\requests\sessions.py", line 602, in get
+    return self.request("GET", url, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\requests\sessions.py", line 589, in request
+    resp = self.send(prep, **send_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\requests\sessions.py", line 703, in send
+    r = adapter.send(request, **kwargs)
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "C:\Users\JBrea\pro-cycling-analysis\.venv\Lib\site-packages\requests\adapters.py", line 691, in send
+    raise RetryError(e, request=request)
+requests.exceptions.RetryError: HTTPSConnectionPool(host='www.la-flamme-rouge.eu', port=443): Max retries exceeded with url: /index.php (Caused by ResponseError('too many 503 error responses'))
+2025-05-19 10:29:50,753 INFO     WDM: ====== WebDriver manager ======
+2025-05-19 10:29:53,649 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-19 10:29:54,305 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-19 10:29:54,785 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-19 10:29:56,250 INFO     WDM: WebDriver version 136.0.7103.94 selected
+2025-05-19 10:29:56,252 INFO     WDM: Modern chrome version https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.94/win32/chromedriver-win32.zip
+2025-05-19 10:29:56,252 INFO     WDM: About to download new driver from https://storage.googleapis.com/chrome-for-testing-public/136.0.7103.94/win32/chromedriver-win32.zip
+2025-05-19 10:29:56,710 INFO     WDM: Driver downloading response is 200
+2025-05-19 10:30:00,811 INFO     WDM: Get LATEST chromedriver version for google-chrome
+2025-05-19 10:30:01,999 INFO     WDM: Driver has been saved in cache [C:\Users\JBrea\.wdm\drivers\chromedriver\win64\136.0.7103.94]
+2025-05-19 10:30:03,609 INFO     scrapers.LFR_gpx_scraper: Logging in to LFR
+2025-05-19 10:31:01,382 INFO     scrapers.LFR_gpx_scraper: Login successful, dismissing post login banners
+2025-05-19 10:31:01,676 INFO     scrapers.LFR_gpx_scraper: Post-login cookie consent dismissed
+2025-05-19 10:31:03,979 INFO     scrapers.LFR_gpx_scraper: WebDriver closed
+2025-05-19 10:35:37,618 INFO     scrapers.LFR_gpx_scraper: Fetching calendar page: https://www.la-flamme-rouge.eu/index.php
+2025-05-19 10:35:40,307 INFO     scrapers.LFR_gpx_scraper: No .UWT tracks found today
