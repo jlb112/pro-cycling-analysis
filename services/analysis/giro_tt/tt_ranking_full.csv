@@ -1,0 +1,416 @@
+lr_rank,rider,Team,rating,Pct25Time,WinScore
+1,Evenepoel Remco,Soudal Quick-Step,0.9690000000000001,1.0,0.96
+2,Tarling Joshua,INEOS Grenadiers,0.941,1.0,0.93
+3,Ganna Filippo,INEOS Grenadiers,0.888,1.0,0.85
+4,Kung Stefan,Groupama-FDJ,0.7490000000000001,1.0,0.65
+5,Pogacar Tadej,UAE Team Emirates,0.736,1.0,0.58
+6,Roglic Primoz,BORA-hansgrohe,0.72,1.0,0.64
+7,Vingegaard Jonas,Team Visma | Lease a Bike,0.684,1.0,0.66
+8,van Aert Wout,Team Visma | Lease a Bike,0.6709999999999999,0.889,0.57
+9,Foss Tobias,INEOS Grenadiers,0.6579999999999999,1.0,0.61
+10,Ayuso Juan,UAE Team Emirates,0.6509999999999999,1.0,0.61
+11,Lampaert Yves,Soudal Quick-Step,0.575,0.8,0.51
+12,Almeida Joao,UAE Team Emirates,0.564,1.0,0.46
+13,Pedersen Mads,Lidl-Trek,0.551,0.75,0.58
+14,Cavagna Remi,Soudal Quick-Step,0.551,1.0,0.49
+15,Waerenskjold Soren,Uno-X Mobility,0.5489999999999999,0.8,0.49
+16,Sheffield Magnus,INEOS Grenadiers,0.5489999999999999,0.889,0.5
+17,Bjerg Mikkel,UAE Team Emirates,0.537,0.813,0.45
+18,Thomas Geraint,INEOS Grenadiers,0.534,0.846,0.45
+19,Wellens Tim,UAE Team Emirates,0.528,0.75,0.48
+20,Vauquelin Kevin,ARKEA-B&B HOTELS,0.523,0.778,0.53
+21,Bissegger Stefan,EF Education-EasyPost,0.522,0.8,0.43
+22,Vine Jay,UAE Team Emirates,0.52,0.833,0.42
+23,Hayter Ethan,INEOS Grenadiers,0.5,0.889,0.5
+24,Cattaneo Mattia,Soudal Quick-Step,0.494,0.857,0.39
+25,Vlasov Aleksandr,BORA-hansgrohe,0.47200000000000003,1.0,0.36
+26,Armirail Bruno,Groupama-FDJ,0.473,0.9329999999999999,0.41
+27,van der Poel Mathieu,Alpecin-Deceuninck,0.47100000000000003,0.833,0.48
+28,McNulty Brandon,UAE Team Emirates,0.46799999999999997,0.615,0.4
+29,Arensman Thymen,INEOS Grenadiers,0.469,0.818,0.41
+30,Martinez Daniel,BORA-hansgrohe,0.45299999999999996,0.875,0.39
+31,Skjelmose Mattias,Lidl-Trek,0.439,1.0,0.51
+32,Oliveira Nelson,Movistar Team,0.419,0.75,0.32
+33,Wright Fred,Bahrain Victorious,0.40700000000000003,0.833,0.34
+34,Asgreen Kasper,Soudal Quick-Step,0.402,0.875,0.32
+35,Suter Joel,Tudor Pro Cycling Team,0.397,0.8,0.41
+36,Sobrero Matteo,BORA-hansgrohe,0.39399999999999996,0.917,0.34
+37,Geoghegan Hart Tao,Lidl-Trek,0.389,0.75,0.29
+38,Mollema Bauke,Lidl-Trek,0.386,0.833,0.3
+39,Dennis Rohan,Retired,0.365,0.7140000000000001,0.3
+40,Hoole Daan,Lidl-Trek,0.36200000000000004,0.75,0.28
+41,Van Wilder Ilan,Soudal Quick-Step,0.354,0.75,0.34
+42,Tratnik Jan,Team Visma | Lease a Bike,0.349,0.667,0.25
+43,Schachmann Max,BORA-hansgrohe,0.349,0.6,0.27
+44,Vernon Ethan,Israel-Premier Tech,0.336,0.75,0.38
+45,Bettiol Alberto,EF Education-EasyPost,0.33299999999999996,0.556,0.29
+46,Healy Ben,EF Education-EasyPost,0.32899999999999996,0.6,0.27
+47,Yates Adam,UAE Team Emirates,0.32799999999999996,0.7,0.3
+48,Cerny Josef,Soudal Quick-Step,0.324,0.6,0.29
+49,Kamna Lennard,BORA-hansgrohe,0.322,0.909,0.23
+50,Larsen Niklas,Uno-X Mobility,0.319,1.0,0.4
+51,Yates Simon,Team Jayco-AlUla,0.313,0.6,0.31
+52,Herregodts Rune,Intermarche-Wanty,0.302,0.556,0.26
+53,Edmondson Alex,Team dsm-firmenich PostNL,0.301,0.5,0.33
+54,Zijlaard Maikel,Tudor Pro Cycling Team,0.298,1.0,0.53
+55,Affini Edoardo,Team Visma | Lease a Bike,0.29600000000000004,0.857,0.2
+56,Campenaerts Victor,Lotto Dstny,0.29100000000000004,0.5,0.35
+57,Fisher-Black Finn,UAE Team Emirates,0.29100000000000004,0.625,0.27
+58,Powless Neilson,EF Education-EasyPost,0.285,0.8,0.21
+59,Stuyven Jasper,Lidl-Trek,0.28,0.5,0.23
+60,Castroviejo Jonathan,INEOS Grenadiers,0.278,0.6,0.24
+61,Price-Pejtersen Johan,Bahrain Victorious,0.275,0.667,0.26
+62,Politt Nils,UAE Team Emirates,0.273,0.6,0.22
+63,Tulett Ben,Team Visma | Lease a Bike,0.271,0.667,0.27
+64,Mohoric Matej,Bahrain Victorious,0.268,0.4,0.2
+65,Gregoire Romain,Groupama-FDJ,0.267,0.75,0.24
+66,Vermeersch Florian,Lotto Dstny,0.266,0.7140000000000001,0.25
+67,Hepburn Michael,Team Jayco-AlUla,0.264,0.778,0.24
+68,O'Connor Ben,Decathlon AG2R La Mondiale Team,0.263,0.727,0.24
+69,Jorgenson Matteo,Team Visma | Lease a Bike,0.26,0.5710000000000001,0.24
+70,Thomas Benjamin,Cofidis,0.256,0.75,0.28
+71,Steimle Jannik,Q36.5 Pro Cycling Team,0.255,1.0,0.34
+72,Sivakov Pavel,UAE Team Emirates,0.253,0.75,0.23
+73,Kepplinger Rainer,Bahrain Victorious,0.248,0.667,0.24
+74,Latour Pierre,TotalEnergies,0.247,0.5,0.2
+75,Bax Sjoerd,UAE Team Emirates,0.24600000000000002,0.6,0.25
+76,Gate Aaron,Burgos - BH,0.24600000000000002,0.75,0.4
+77,Swift Connor,INEOS Grenadiers,0.243,0.667,0.21
+78,Norman Leth Lasse,Team CO:PLAY-Giant Store,0.242,1.0,0.38
+79,Guernalec Thibault,ARKEA-B&B HOTELS,0.24100000000000002,0.667,0.23
+80,Durbridge Luke,Team Jayco-AlUla,0.239,0.5710000000000001,0.21
+81,Grossschartner Felix,UAE Team Emirates,0.239,0.4,0.26
+82,Caruso Damiano,Bahrain Victorious,0.23600000000000002,0.364,0.17
+83,Matthews Michael,Team Jayco-AlUla,0.235,0.667,0.18
+84,Barta William,Movistar Team,0.23199999999999998,0.556,0.25
+85,Bodnar Maciej,Retired,0.22899999999999998,0.5,0.15
+86,Rodriguez Carlos,INEOS Grenadiers,0.21100000000000002,0.75,0.19
+87,Bol Cees,Astana Qazaqstan Team,0.207,0.429,0.23
+88,Heidemann Miguel,Team Felt Felbermayr,0.207,0.778,0.18
+89,Cort Magnus,Uno-X Mobility,0.207,0.556,0.17
+90,Oliveira Ivo,UAE Team Emirates,0.20199999999999999,0.4,0.19
+91,Milan Jonathan,Lidl-Trek,0.20199999999999999,0.5,0.15
+92,Kluckers Arthur,Tudor Pro Cycling Team,0.2,0.5710000000000001,0.21
+93,Plapp Lucas,Team Jayco-AlUla,0.198,0.5710000000000001,0.16
+94,Pedersen Casper,Soudal Quick-Step,0.19399999999999998,0.667,0.19
+95,Laporte Christophe,Team Visma | Lease a Bike,0.19,0.5,0.15
+96,van Dijke Tim,Team Visma | Lease a Bike,0.187,0.75,0.25
+97,Kragh Andersen Soren,Alpecin-Deceuninck,0.188,0.667,0.21
+98,Gee Derek,Israel-Premier Tech,0.185,0.556,0.12
+99,Trentin Matteo,Tudor Pro Cycling Team,0.182,0.5,0.15
+100,Kwiatkowski Michal,INEOS Grenadiers,0.179,0.545,0.14
+101,Norsgaard Mathias,Movistar Team,0.17800000000000002,0.25,0.19
+102,De Plus Laurens,INEOS Grenadiers,0.17600000000000002,0.375,0.13
+103,Vacek Mathias,Lidl - Trek,0.175,0.667,0.14
+104,Carr Simon,EF Education-EasyPost,0.17300000000000001,0.5710000000000001,0.19
+105,Van Moer Brent,Lotto Dstny,0.17300000000000001,0.545,0.2
+106,Kirsch Alex,Lidl-Trek,0.172,0.6,0.18
+107,Denz Nico,BORA-hansgrohe,0.171,0.4,0.14
+108,Soler Marc,UAE Team Emirates,0.16699999999999998,0.2,0.11
+109,Eekhoff Nils,Team dsm-firmenich PostNL,0.16699999999999998,0.14300000000000002,0.16
+110,Poole Max,Team dsm-firmenich PostNL,0.166,0.5710000000000001,0.13
+111,Schmid Mauro,Team Jayco-AlUla,0.166,0.875,0.24
+112,Bilbao Pello,Bahrain Victorious,0.16399999999999998,0.778,0.21
+113,de Bod Stefan,EF Education-EasyPost,0.162,0.444,0.11
+114,Frison Frederik,Q36.5 Pro Cycling Team,0.16,0.5,0.14
+115,Welsford Sam,BORA-hansgrohe,0.157,0.429,0.19
+116,Craddock Lawson,Team Jayco-AlUla,0.156,0.4,0.12
+117,Van Emden Jos,Retired,0.155,0.5,0.16
+118,Davy Clement,Groupama - FDJ,0.153,0.375,0.15
+119,Hirschi Marc,UAE Team Emirates,0.152,0.33299999999999996,0.14
+120,Tiberi Antonio,Bahrain Victorious,0.147,0.5,0.12
+121,Kelderman Wilco,Team Visma | Lease a Bike,0.146,0.5,0.12
+122,Hindley Jai,BORA-hansgrohe,0.145,0.556,0.13
+123,Alaphilippe Julian,Soudal Quick-Step,0.14400000000000002,0.28600000000000003,0.13
+124,Arndt Nikias,Bahrain Victorious,0.142,0.846,0.13
+125,Bouwman Koen,Team Visma | Lease a Bike,0.141,0.375,0.12
+126,Ulissi Diego,UAE Team Emirates,0.135,0.25,0.15
+127,Gautherat Pierre,Decathlon AG2R La Mondiale Team,0.134,0.5,0.18
+128,van Gestel Dries,TotalEnergies,0.132,0.25,0.14
+129,van Dijke Mick,Team Visma | Lease a Bike,0.129,0.5710000000000001,0.15
+130,Ilic Ognjen,,0.128,0.4,0.06
+131,Leknessund Andreas,Uno-X Mobility,0.126,0.615,0.08
+132,Azparren Xabier,Q36.5 Pro Cycling Team,0.124,0.4,0.09
+133,Quinn Sean,EF Education-EasyPost,0.124,0.455,0.13
+134,Kooij Olav,Team Visma | Lease a Bike,0.124,0.28600000000000003,0.17
+135,Mullen Ryan,EF Education-EasyPost,0.12300000000000001,0.667,0.09
+136,Kuss Sepp,Team Visma | Lease a Bike,0.11900000000000001,0.222,0.07
+137,Cabot Jeremy,St Michel - Mavic - Auber93,0.11800000000000001,0.5,0.17
+138,van Baarle Dylan,Team Visma | Lease a Bike,0.11800000000000001,0.444,0.09
+139,Zingle Axel,Cofidis,0.11599999999999999,0.25,0.12
+140,Brenner Marco,Tudor Pro Cycling Team,0.11599999999999999,0.3,0.11
+141,Mas Enric,Movistar Team,0.11599999999999999,0.5,0.08
+142,Paleni Enzo,Groupama-FDJ,0.11599999999999999,0.429,0.11
+143,Gibbons Ryan,Lidl-Trek,0.11599999999999999,0.4,0.08
+144,De La Cruz David,Q36.5 Pro Cycling Team,0.115,0.5,0.1
+145,Currie Logan,Lotto Dstny,0.114,0.75,0.19
+146,Lutsenko Alexey,Astana Qazaqstan Team,0.114,0.33299999999999996,0.08
+147,Herrada Jesus,Cofidis,0.113,0.4,0.11
+148,Haig Jack,Bahrain Victorious,0.111,0.33299999999999996,0.07
+149,O'Brien Kelland,Team Jayco-AlUla,0.106,0.25,0.1
+150,Osborne Jason,Alpecin-Deceuninck,0.106,0.16699999999999998,0.1
+151,Jungels Bob,BORA-hansgrohe,0.10400000000000001,0.33299999999999996,0.08
+152,Fuglsang Jakob,Israel-Premier Tech,0.10400000000000001,0.25,0.11
+153,Heiduk Kim,INEOS Grenadiers,0.10300000000000001,0.33299999999999996,0.09
+154,Uijtdebroeks Cian,Team Visma | Lease a Bike,0.10099999999999999,0.33299999999999996,0.08
+155,Maciejuk Filip,BORA-hansgrohe,0.10099999999999999,0.5710000000000001,0.09
+156,Cosnefroy Benoit,Decathlon AG2R La Mondiale Team,0.1,0.222,0.12
+157,Watson Samuel,Groupama-FDJ,0.1,0.25,0.1
+158,Izagirre Ion,Cofidis,0.1,0.444,0.09
+159,Romeo Ivan,Movistar Team,0.099,0.4,0.13
+160,Bregnhoj Mathias,,0.099,0.5,0.15
+161,Demare Arnaud,ARKEA-B&B HOTELS,0.098,0.16699999999999998,0.11
+162,Gaudu David,Groupama-FDJ,0.098,0.5,0.07
+163,Tejada Harold,,0.09699999999999999,0.364,0.08
+164,Bennett Sam,Decathlon AG2R La Mondiale Team,0.096,0.33299999999999996,0.14
+165,van Poppel Danny,BORA-hansgrohe,0.094,0.125,0.09
+166,Velasco Simone,Astana Qazaqstan Team,0.09300000000000001,0.33299999999999996,0.06
+167,Masnada Fausto,Soudal Quick-Step,0.09300000000000001,0.5,0.09
+168,Gregaard Jonas,Lotto Dstny,0.09300000000000001,0.33299999999999996,0.1
+169,Baudin Alex,Decathlon AG2R La Mondiale Team,0.092,0.25,0.09
+170,Skujins Toms,Lidl-Trek,0.09,0.231,0.07
+171,Pidcock Tom,INEOS Grenadiers,0.091,0.375,0.06
+172,Costiou Ewen,ARKEA-B&B HOTELS,0.09,0.28600000000000003,0.14
+173,Geniets Kevin,Groupama-FDJ,0.086,0.222,0.08
+174,Costa Rui,EF Education-EasyPost,0.08199999999999999,0.33299999999999996,0.07
+175,Tiller Rasmus,Uno-X Mobility,0.081,0.33299999999999996,0.09
+176,Paret-Peintre Aurelien,Decathlon AG2R La Mondiale Team,0.08,0.25,0.06
+177,Perichon Pierre-Luc,,0.079,0.222,0.07
+178,Meurisse Xandro,Alpecin-Deceuninck,0.079,0.14300000000000002,0.07
+179,Bevin Patrick,Team dsm-firmenich PostNL,0.079,0.5,0.09
+180,Ludvigsson Tobias,Q36.5 Pro Cycling Team,0.079,0.429,0.07
+181,Martinez Lenny,Groupama-FDJ,0.079,0.2,0.06
+182,Bohli Tom,Tudor Pro Cycling Team,0.078,0.182,0.1
+183,Christen Jan,UAE Team Emirates,0.078,0.25,0.07
+184,Walscheid Max,Team Jayco-AlUla,0.076,0.625,0.07
+185,Godon Dorian,Decathlon AG2R La Mondiale Team,0.075,0.33299999999999996,0.08
+186,Johansen Julius,Sabgal / Anicolor,0.073,0.222,0.08
+187,Mihkels Madis,Intermarche-Wanty,0.071,0.25,0.08
+188,Sutterlin Jasha,Bahrain Victorious,0.071,0.28600000000000003,0.05
+189,Shaw James,EF Education-EasyPost,0.071,0.5,0.05
+190,Haga Chad,Retired,0.07,0.4,0.11
+191,Germani Lorenzo,Groupama-FDJ,0.069,0.33299999999999996,0.07
+192,Touze Damien,Decathlon AG2R La Mondiale Team,0.069,0.16699999999999998,0.08
+193,Garcia Raul,BORA-hansgrohe,0.068,0.5,0.07
+194,Pinot Thibaut,Retired,0.067,0.16699999999999998,0.05
+195,Sagan Peter,Retired,0.067,0.16699999999999998,0.05
+196,Groves Kaden,Alpecin-Deceuninck,0.066,0.125,0.05
+197,Battistella Samuele,Astana Qazaqstan Team,0.064,0.1,0.04
+198,Venturini Clement,ARKEA-B&B HOTELS,0.062,0.14300000000000002,0.06
+199,Lazkano Oier,Movistar Team,0.062,0.25,0.05
+200,Higuita Sergio,BORA-hansgrohe,0.062,0.273,0.05
+201,Madouas Valentin,Groupama-FDJ,0.06,0.091,0.04
+202,Grondin Donavan,ARKEA-B&B HOTELS,0.059000000000000004,0.2,0.06
+203,Berthet Clement,Decathlon AG2R La Mondiale Team,0.059000000000000004,0.14300000000000002,0.06
+204,Baroncini Filippo,UAE Team Emirates,0.059000000000000004,0.16699999999999998,0.05
+205,Berckmoes Jenno,Lotto Dstny,0.057999999999999996,0.375,0.08
+206,Rochas Remy,Groupama-FDJ,0.055999999999999994,0.222,0.06
+207,Dujardin Sandy,,0.055999999999999994,0.25,0.1
+208,Bagioli Andrea,Lidl-Trek,0.052000000000000005,0.111,0.04
+209,Van Gils Maxim,Lotto Dstny,0.052000000000000005,0.16699999999999998,0.05
+210,Riesebeek Oscar,Alpecin-Deceuninck,0.052000000000000005,0.1,0.05
+211,Carthy Hugh,EF Education-EasyPost,0.051,0.429,0.03
+212,van Uden Casper,Team dsm-firmenich PostNL,0.051,0.16699999999999998,0.04
+213,De Marchi Alessandro,,0.051,0.091,0.04
+214,Page Hugo,Intermarche-Wanty,0.051,0.111,0.04
+215,Valter Attila,Team Visma | Lease a Bike,0.05,0.25,0.05
+216,Padun Mark,Team Corratec - Vini Fantini,0.051,0.1,0.04
+217,Onley Oscar,Team dsm-firmenich PostNL,0.05,0.4,0.04
+218,Taaramae Rein,,0.049,0.182,0.04
+219,Teuns Dylan,Israel-Premier Tech,0.049,0.33299999999999996,0.05
+220,Mayrhofer Marius,Tudor Pro Cycling Team,0.049,0.125,0.04
+221,Leroux Samuel,,0.048,0.6,0.1
+222,De Buyst Jasper,Lotto Dstny,0.048,0.2,0.05
+223,Maestri Mirco,,0.048,0.125,0.04
+224,De Pestel Sander,,0.047,0.5,0.08
+225,Frigo Marco,,0.047,0.25,0.04
+226,Raugel Antoine,,0.045,0.2,0.08
+227,Milesi Lorenzo,,0.045,0.5,0.03
+228,Uran Rigoberto,,0.045,0.111,0.03
+229,Charmig Anthon,,0.045,0.5,0.05
+230,De Gendt Thomas,,0.044000000000000004,0.273,0.04
+231,Meeus Jordi,BORA-hansgrohe,0.040999999999999995,0.1,0.04
+232,Menten Milan,,0.040999999999999995,0.125,0.05
+233,Dunbar Edward,,0.040999999999999995,0.33299999999999996,0.03
+234,Beullens Cedric,,0.04,0.25,0.04
+235,Theuns Edward,,0.039,0.16699999999999998,0.03
+236,Perez Anthony,,0.038,0.16699999999999998,0.04
+237,Scotson Miles,,0.038,0.28600000000000003,0.04
+238,Ledanois Kevin,,0.036000000000000004,0.16699999999999998,0.04
+239,Haller Marco,BORA-hansgrohe,0.036000000000000004,0.2,0.03
+240,Carapaz Richard,EF Education-EasyPost,0.036000000000000004,0.28600000000000003,0.04
+241,Pluimers Rick,,0.035,0.33299999999999996,0.06
+242,Gall Felix,,0.035,0.222,0.04
+243,Fretin Milan,,0.034,0.2,0.04
+244,Peak Barnabas,,0.034,0.25,0.04
+245,Izagirre Gorka,Cofidis,0.034,0.125,0.03
+246,Strong Corbin,,0.032,0.16699999999999998,0.03
+247,Philipsen Jasper,Alpecin-Deceuninck,0.032,0.222,0.02
+248,Scotson Callum,,0.03,0.125,0.02
+249,Oldani Stefano,,0.03,0.14300000000000002,0.02
+250,Bystrom Sven Erik,,0.03,0.1,0.03
+251,Burgaudeau Mathieu,,0.028999999999999998,0.222,0.03
+252,Aranburu Alex,,0.027000000000000003,0.2,0.03
+253,Rota Lorenzo,,0.027000000000000003,0.111,0.02
+254,Moniquet Sylvain,,0.026000000000000002,0.1,0.03
+255,Honore Mikkel,,0.027000000000000003,0.091,0.02
+256,Geschke Simon,,0.026000000000000002,0.083,0.02
+257,Schwarzmann Michael,,0.026000000000000002,0.16699999999999998,0.03
+258,Wurtz Schmidt Mads,,0.026000000000000002,0.14300000000000002,0.02
+259,Syritsa Gleb,,0.026000000000000002,0.4,0.03
+260,Molard Rudy,Groupama-FDJ,0.026000000000000002,0.125,0.02
+261,Kamp Alexander,,0.025,0.1,0.02
+262,Lapeira Paul,,0.025,0.14300000000000002,0.02
+263,Konrad Patrick,,0.025,0.222,0.02
+264,Bardet Romain,,0.025,0.222,0.02
+265,Kogut Oded,,0.024,0.25,0.03
+266,Houle Hugo,,0.024,0.25,0.02
+267,Renard Alexis,,0.024,0.16699999999999998,0.03
+268,Tronchon Bastien,,0.024,0.16699999999999998,0.02
+269,Sanchez Luis Leon,,0.023,0.4,0.02
+270,Vink Michael,,0.023,0.25,0.03
+271,Dainese Alberto,,0.023,0.1,0.02
+272,Ezquerra Jesus,,0.023,0.25,0.03
+273,Senechal Florian,,0.022000000000000002,0.222,0.02
+274,Ballerini Davide,,0.022000000000000002,0.16699999999999998,0.02
+275,Schultz Nick,,0.022000000000000002,0.125,0.02
+276,Brustenga Marc,,0.02,0.2,0.02
+277,Parisini Nicola,,0.02,0.16699999999999998,0.04
+278,Tusveld Martijn,,0.019,0.091,0.01
+279,Barrenetxea Jon,,0.019,0.25,0.02
+280,Rutsch Jonas,,0.019,0.2,0.02
+281,Gruzdev Dmitriy,,0.019,0.125,0.02
+282,Hoelgaard Markus,,0.018000000000000002,0.2,0.02
+283,Guerreiro Ruben,,0.018000000000000002,0.16699999999999998,0.02
+284,Bauer Jack,,0.019,0.111,0.02
+285,Gallopin Tony,,0.018000000000000002,0.182,0.01
+286,Amador Andrey,,0.018000000000000002,0.111,0.02
+287,Vermeersch Gianni,,0.017,0.16699999999999998,0.01
+288,Bouchard Geoffrey,,0.017,0.125,0.01
+289,Berrade Urko,Equipo Kern Pharma,0.016,0.4,0.03
+290,Schar Michael,,0.015,0.111,0.02
+291,Leysen Senne,,0.013999999999999999,0.111,0.01
+292,Vliegen Loic,,0.013999999999999999,0.14300000000000002,0.02
+293,Devenyns Dries,,0.013000000000000001,0.091,0.01
+294,Rodriguez Oscar,,0.013000000000000001,0.25,0.01
+295,Doull Owain,,0.013000000000000001,0.14300000000000002,0.01
+296,Fraile Omar,INEOS Grenadiers,0.012,0.2,0.01
+297,Bonnamour Franck,,0.011000000000000001,0.111,0.01
+298,Voisard Yannis,,0.01,0.14300000000000002,0.01
+299,Felline Fabio,,0.01,0.33299999999999996,0.01
+300,Reinders Elmar,,0.009000000000000001,0.2,0.01
+301,Van Avermaet Greg,,0.009000000000000001,0.125,0.01
+302,Roosen Timo,,0.009000000000000001,0.2,0.01
+303,Lund Andresen Tobias,,0.009000000000000001,0.16699999999999998,0.01
+304,Harper Chris,,0.008,0.125,0.01
+305,Van Tricht Stan,,0.008,0.28600000000000003,0.01
+306,Ciccone Giulio,,0.008,0.111,0.01
+307,Rickaert Jonas,,0.006999999999999999,0.2,0.01
+308,Vansevenant Mauri,Soudal Quick-Step,0.006,0.111,0.01
+309,De Wilde Gilles,,0.006,0.16699999999999998,0.01
+310,Russo Clement,,0.006,0.14300000000000002,0.0
+311,Eenkhoorn Pascal,,0.006,0.14300000000000002,0.01
+312,Fetter Erik,,0.006,0.16699999999999998,0.0
+313,Bernard Julien,,0.006,0.273,0.01
+314,De Gendt Aime,,0.005,0.16699999999999998,0.01
+315,Meintjes Louis,,0.005,0.111,0.0
+316,Stork Florian,,0.004,0.1,0.0
+317,Leemreize Gijs,,0.004,0.1,0.0
+318,Declercq Tim,,0.003,0.111,0.0
+319,Majka Rafal,,0.003,0.222,0.0
+320,Rex Laurenz,,0.003,0.16699999999999998,0.0
+321,Hamilton Lucas,,0.002,0.28600000000000003,0.0
+322,Kluge Roger,,0.002,0.25,0.0
+323,Sweeny Harry,,0.002,0.111,0.0
+324,Petit Adrien,,0.002,0.14300000000000002,0.0
+325,Gesink Robert,,0.002,0.125,0.0
+326,Miquel Delgado Pau,,0.002,0.2,0.0
+327,Van Asbroeck Tom,,0.002,0.16699999999999998,0.0
+328,Zukowsky Nickolas,,0.002,0.2,0.0
+329,Hamilton Chris,,0.001,0.091,0.0
+330,Aleotti Giovanni,,0.001,0.125,0.0
+331,Morkov Michael,,0.001,0.1,0.0
+332,Vendrame Andrea,Decathlon AG2R La Mondiale Team,0.001,0.111,0.0
+333,de Kleijn Arvid,,0.001,0.16699999999999998,0.0
+334,Donovan Mark,,0.001,0.125,0.0
+335,Moschetti Matteo,,0.001,0.16699999999999998,0.0
+336,Reichenbach Sebastien,,0.001,0.111,0.0
+337,Kristoff Alexander,,0.001,0.1,0.0
+338,Muff Frederik,Team ColoQuick,0.0,1.0,0.4
+339,Turner Ben,INEOS Grenadiers,0.0,0.33299999999999996,0.23
+340,Nibali Vincenzo,,0.0,0.33299999999999996,0.12
+341,Roux Anthony,,0.0,0.33299999999999996,0.08
+342,Dekker David,,0.0,0.33299999999999996,0.09
+343,Lemmen Bart,Team Visma | Lease a Bike,0.0,0.33299999999999996,0.14
+344,Ballerstedt Maurice,,0.0,0.33299999999999996,0.08
+345,Silva Joaquim,,0.0,0.33299999999999996,0.08
+346,Polanc Jan,,0.0,0.33299999999999996,0.07
+347,Boven Lars,,0.0,0.33299999999999996,0.08
+348,Jeanniere Emilien,,0.0,1.0,0.12
+349,Doubey Fabien,TotalEnergies,0.0,0.33299999999999996,0.03
+350,Chzhan Igor,,0.0,0.33299999999999996,0.03
+351,Vandenbranden Noah,Team Flanders - Baloise,0.0,0.33299999999999996,0.14
+352,Scott Cameron,,0.0,0.33299999999999996,0.05
+353,Schachmann Maximilian,,0.0,0.33299999999999996,0.05
+354,Ostergaard Mads,,0.0,0.33299999999999996,0.06
+355,Svrcek Martin,,0.0,0.33299999999999996,0.02
+356,Hecht Gage,,0.0,0.33299999999999996,0.01
+357,Janse van Rensburg Reinardt,,0.0,0.33299999999999996,0.0
+358,Kelemen Petr,,0.0,0.33299999999999996,0.0
+359,Stockman Abram,,0.0,0.33299999999999996,0.0
+360,Heming Mika,,0.0,0.667,0.01
+361,Vanmarcke Sep,,0.0,0.33299999999999996,0.0
+362,Segaert Alec,,0.0,1.0,0.25
+363,Knolle Jon,,0.0,0.5,0.09
+364,Makogon Vladyslav,,0.0,0.5,0.02
+365,Sanchez Mayo Pelayo,,0.0,0.5,0.06
+366,Otruba Jakub,,0.0,0.5,0.09
+367,del Toro Isaac,UAE Team Emirates,0.0,0.5,0.29
+368,Morgado Antonio,,0.0,1.0,0.2
+369,Hagenes Per Strand,,0.0,0.5,0.07
+370,Walker Max,Astana Qazaqstan Development Team,0.0,0.5,0.15
+371,Dowsett Alex,,0.0,0.0,0.0
+372,Valverde Alejandro,,0.0,0.0,0.0
+373,Canal Carlos,Movistar Team,0.0,0.5,0.19
+374,Staune-Mittet Johannes,,0.0,1.0,0.27
+375,Nerurkar Lukas,,0.0,0.5,0.1
+376,Juaristi Txomin,,0.0,1.0,0.31
+377,Arrieta Igor,,0.0,0.5,0.09
+378,Antunes Tiago,,0.0,0.5,0.07
+379,Svestad-Bardseng Embret,,0.0,1.0,0.03
+380,Woods Michael,Israel-Premier Tech,0.0,0.0,0.0
+381,Ahlsson Jacob,,0.0,1.0,0.43
+382,Barta Jan,,0.0,1.0,0.32
+383,Bernard Thibaut,,0.0,0.5,0.01
+384,Bezza Quentin,,0.0,1.0,0.25
+385,Dumoulin Tom,,0.0,1.0,0.84
+386,Eddy Patrick,Team dsm-firmenich PostNL,0.0,1.0,0.26
+387,Gaze Samuel,Alpecin-Deceuninck,0.0,1.0,0.46
+388,Gross Felix,,0.0,1.0,0.21
+389,Hermans Ben,,0.0,1.0,0.2
+390,Hulgaard Morten,,0.0,1.0,0.71
+391,Kangert Tanel,,0.0,0.5,0.26
+392,Klaris Magnus Bak,,0.0,0.5,0.09
+393,Knight Oliver,,0.0,0.5,0.02
+394,Le Huitouze Eddy,,0.0,0.5,0.08
+395,Lopez Miguel Angel,,0.0,0.5,0.19
+396,Malmberg Matias,,0.0,1.0,0.06
+397,Mikutis Aivaras,,0.0,1.0,0.02
+398,Moriarty James,,0.0,1.0,0.06
+399,Porte Richie,,0.0,1.0,0.27
+400,Rafferty Darren,,0.0,1.0,0.01
+401,Schelling Ide,,0.0,1.0,0.26
+402,Sheehan Riley,,0.0,1.0,0.25
+403,Siskevicius Evaldas,,0.0,1.0,0.16
+404,Soderqvist Jakob,Lidl - Trek Future Racing,0.0,1.0,0.72
+405,Steinhauser Georg,EF Education-EasyPost,0.0,0.5,0.11
+406,Stokbro Andreas,,0.0,1.0,0.11
+407,Svarre Tobias,,0.0,1.0,0.01
+408,Tanfield Harry,,0.0,1.0,0.06
+409,Toft Madsen Martin,,0.0,0.5,0.06
+410,van der Lijke Nick,,0.0,1.0,0.32
+411,van der Tuuk Axel,,0.0,1.0,0.27
+412,Watson Sam,Groupama-FDJ,0.0,1.0,0.48
+413,Carboni Giovanni,,0.0,1.0,0.01
+414,Megens Brian,,0.0,1.0,0.32
+415,Ribeiro da Cruz Mathias,,0.0,1.0,0.37
