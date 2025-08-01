@@ -11,3 +11,30 @@ services/analysis/outputs
 
 # venv
 venv/
+.venv/
+
+# Ignore pipeline-related files
+services/pipeline/**/*.sql.dump
+services/pipeline/**/*.backup
+services/pipeline/**/*.pgsql
+
+# Ignore secrets and environment files
+services/pipeline/.env
+services/pipeline/.env/dev.env
+services/pipeline/.env/prod.env
+services/pipeline/.env/staging.env
+services/pipeline/.envrc
+services/pipeline/*.pgpass
+
+
+# Ignore local data and temp files
+services/pipeline/*.csv
+services/pipeline/*.json
+services/pipeline/*.parquet
+services/pipeline/data/
+
+# Ignore editor and OS-generated files
+services/pipeline/.DS_Store
+services/pipeline/*~
+services/pipeline/*.swp
+services/pipeline/*.swo
